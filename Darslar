@@ -1,0 +1,248 @@
+# 1. Boshlang'ich o'zgaruvchilar
+kocha = "Bog'bon"
+mahalla = "Sog'bon"
+tuman = "Bodomzor"
+viloyat = "Samarqand"
+
+# 2. Manzilni oddiy formatda chiqarish
+print(f"{kocha} ko'chasi, {mahalla} mahallasi, {tuman} tumani, {viloyat} viloyati")
+
+# 3. Foydalanuvchidan qiymatlarni so'rash
+kocha = input("Ko'changiz nomini kiriting: ")
+mahalla = input("Mahallangiz nomini kiriting: ")
+tuman = input("Tumaningiz nomini kiriting: ")
+viloyat = input("Viloyatingiz nomini kiriting: ")
+
+# 4. Har bir qism yangi qatorda bo'lishi uchun konsolga chiqarish
+print(f"{kocha} ko'chasi,\n{mahalla} mahallasi,\n{tuman} tumani,\n{viloyat} viloyati")
+
+# 5. F-string yordamida "manzil" o'zgaruvchisini yaratish
+manzil = f"{kocha} ko'chasi, {mahalla} mahallasi, {tuman} tumani, {viloyat} viloyati"
+
+# 6. String metodlari bilan ishlash
+print("\nTitle:")
+print(manzil.title())
+
+print("\nUpper:")
+print(manzil.upper())
+
+print("\nLower:")
+print(manzil.lower())
+
+print("\nCapitalize:")
+print(manzil.capitalize())
+
+
+
+
+#############################################################
+
+# kvadrat_kub.py
+
+son = float(input("Istalgan son kiriting: "))
+print(f"{son} ning kvadrati: {son**2}")
+print(f"{son} ning kubi: {son**3}")
+#####################################
+
+# tugilgan_yil.py
+
+from datetime import datetime
+
+yosh = int(input("Yoshingiz nechida? "))
+hozirgi_yil = datetime.now().year
+tugilgan_yil = hozirgi_yil - yosh
+print(f"Siz taxminan {tugilgan_yil}-yilda tug‘ilgansiz.")
+
+####################################
+
+
+# arifmetik_amallar.py
+
+son1 = float(input("Birinchi sonni kiriting: "))
+son2 = float(input("Ikkinchi sonni kiriting: "))
+
+print(f"Yig'indisi: {son1 + son2}")
+print(f"Ayirmasi: {son1 - son2}")
+print(f"Ko'paytmasi: {son1 * son2}")
+if son2 != 0:
+    print(f"Bo'linmasi: {son1 / son2}")
+else:
+    print("Bo'lish mumkin emas (0 ga bo'linmaydi).")
+
+
+#####################################
+ismlar = ['Anvar', 'Diyor', 'Lola']
+for ism in ismlar:
+    print(f"Salom {ism}, bugun choyxonaga boramizmi?")
+################################
+
+
+sonlar = [10, -3, 4.5, 0, 100]
+
+# Arifmetik amallar
+print(f"{sonlar[0]} ning kvadrati: {sonlar[0]**2}")
+print(f"{sonlar[1]} ga 5 qo‘shsak: {sonlar[1] + 5}")
+print(f"{sonlar[2]} ni 2 ga ko‘paytirsak: {sonlar[2] * 2}")
+
+# Qiymat o‘zgartirish
+sonlar[0] = sonlar[0] + 1  # 1 ga oshiramiz
+sonlar[3] = 3.14  # nol o‘rniga pi qiymatini beramiz
+print("O'zgartirilgan ro'yxat:", sonlar)
+#####################################
+
+t_shaxslar = ['Imom Buxoriy', 'Amir Temur', 'Ibn Sino']
+z_shaxslar = ['Elon Musk', 'Bill Gates', 'Barack Obama']
+
+t_shaxs = t_shaxslar.pop(1)
+z_shaxs = z_shaxslar.pop(0)
+
+print(f"Men tarixiy shaxslardan {t_shaxs} bilan, zamonaviy shaxslardan esa {z_shaxs} bilan suhbat qilishni istardim.")
+#######################
+
+friends = []
+friends.append('Anvar')
+friends.append('Ziyodulla')
+friends.append('Shaxlo')
+friends.append('Sardor')
+friends.append('Nodira')
+friends.append('Diyora')
+
+# Kela olmaydiganlarni o‘chirish
+friends.remove('Nodira')
+friends.remove('Shaxlo')
+
+# Yangi ismlar qo‘shish
+friends.insert(0, 'Azamat')         # boshiga
+friends.append('Javohir')           # oxiriga
+friends.insert(2, 'Madina')         # o‘rtasiga
+
+print("Yangilangan friends ro'yxati:", friends)
+#################################################
+
+
+# 1. Davlatlar ro'yxati
+davlatlar = ['Uzbekistan', 'Kazakhstan', 'Russia', 'USA', 'Germany', 'Japan']
+print("Davlatlar:", davlatlar)
+
+# 2. Ro'yxat uzunligi
+print("Ro'yxat uzunligi:", len(davlatlar))
+
+# 3. Alifbo bo'yicha tartiblangan ro'yxat (asl ro'yxat o'zgarmaydi)
+print("Sorted (alifbo):", sorted(davlatlar))
+
+# 4. Teskari alifbo bo'yicha
+print("Sorted (teskari):", sorted(davlatlar, reverse=True))
+
+# 5. Asl ro'yxatni qaytadan chiqaramiz
+print("Asl ro'yxat:", davlatlar)
+
+# 6. reverse() metodi — o'zgartiradi
+davlatlar.reverse()
+print("Teskari qilib chiqarilgan:", davlatlar)
+
+# 7. sort() bilan alifbo va teskari alifbo bo'yicha
+davlatlar.sort()
+print("Alifbo bo'yicha:", davlatlar)
+davlatlar.sort(reverse=True)
+print("Teskari alifbo bo'yicha:", davlatlar)
+###########################################
+
+
+# 120 dan 1200 gacha bo'lgan juft sonlar ro'yxati
+juft_sonlar = list(range(120, 1201, 2))
+
+# 8. Yig'indisi
+print("Yig'indisi:", sum(juft_sonlar))
+
+# 9. Eng katta va eng kichik son ayirmasi
+print("Eng katta va eng kichik sonlar ayirmasi:", max(juft_sonlar) - min(juft_sonlar))
+
+# 10. Elementlar soni
+print("Elementlar soni:", len(juft_sonlar))
+
+# 11. Boshidan, o'rtasidan va oxiridan 20 ta
+print("Boshidan 20 ta:", juft_sonlar[:20])
+print("O'rtasidan 20 ta:", juft_sonlar[len(juft_sonlar)//2 : len(juft_sonlar)//2 + 20])
+print("Oxiridan 20 ta:", juft_sonlar[-20:])
+############################
+
+
+
++# 12. taomlar ro'yxati
+taomlar = ['osh', 'shashlik', 'norin', 'somsa', 'manti']
+
+# 13. nonushta ro'yxati (nusxa olish)
+nonushta = taomlar[:]
+
+# 14. Faqat nonushtaga mos taomlar qoldiriladi
+nonushta.remove('osh')
+nonushta.remove('shashlik')
+nonushta.remove('norin')
+
+# 15. Yangi taomlar qo‘shish
+nonushta.append('tuxum')
+nonushta.append('qaymoq')
+
+# 16. Har ikkala ro'yxatni ko'rish
+print("Taomlar:", taomlar)
+print("Nonushta:", nonushta)
+
+# 17. Nonushta ro'yxatini o'zgarmas (tuple)ga aylantirib, o'zgartirishga urinish
+nonushta = tuple(nonushta)
+
+try:
+    nonushta[0] = 'qaymoq va non'
+except TypeError as e:
+    print(f"Xato: {e} — Tuple o'zgartirilmaydi!")
+.
+######################################################
+
+login = input("Login ismingizni kiriting: ")
+
+if login.lower() == 'admin':
+    print("Xush kelibsiz, Admin. Foydalanuvchilar ro'yxatini ko'rasizmi?")
+else:
+    print(f"Xush kelibsiz, {login.title()}!")
+########################
+import math
+
+son = float(input("Iltimos, biror son kiriting: "))
+
+if son > 0:
+    print(f"{son} sonining ildizi: {math.sqrt(son)}")
+else:
+    print("Musbat son kiriting.")
+###################################################
+
+
+# juft_son_tekshirish.py
+
+son = int(input("Iltimos, juft son kiriting: "))
+if son % 2 == 0:
+    print("Rahmat!")
+else:
+    print("Bu son juft emas.")
+###########|
+
+
+
+# savat_bor_yoq.py
+
+mahsulotlar = ['non', 'sut', 'yog', 'un', 'tuz', 'shakar', 'piyoz', 'kartoshka', 'sabzi', 'go\'sht']
+bor_mahsulotlar = []
+mavjud_emas = []
+
+print("Iltimos, 5 ta mahsulot kiriting:")
+for i in range(5):
+    mahsulot = input(f"{i+1}-mahsulot: ")
+    if mahsulot in mahsulotlar:
+        bor_mahsulotlar.append(mahsulot)
+    else:
+        mavjud_emas.append(mahsulot)
+
+if mavjud_emas:
+    print("Quyidagi mahsulotlar do'konimizda yo'q:")
+    for mahsulot in mavjud_emas:
+        print(mahsulot)
+else:
+    print("Siz so'ragan barcha mahsulotlar do'konimizda bor.")
