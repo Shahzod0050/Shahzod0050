@@ -246,3 +246,85 @@ if mavjud_emas:
         print(mahsulot)
 else:
     print("Siz so'ragan barcha mahsulotlar do'konimizda bor.")
+
+
+
+
+
+
+
+
+##################################################################################
+14 lugat 
+
+
+python_lugat = {
+    "integer": "Butun son. Masalan: 1, 45, -100",
+    "float": "O'nlik son (kasr). Masalan: 3.14, -0.5",
+    "string": "Matn ko'rinishidagi qiymat. Masalan: 'salom', \"Python\"",
+    "if": "Shart tekshirish operatori. Agar (if) shart to'g'ri bo'lsa, kod bajariladi.",
+    "else": "Aks holda bajariladigan kod bloki. If noto'g'ri bo'lsa, else ishlaydi.",
+    "elif": "Yana bir shartni tekshiruvchi operator. If dan keyin keladi.",
+    "list": "Bir nechta elementlardan tashkil topgan tartibli ro'yxat. [element1, element2]",
+    "tuple": "O'zgarmas ro'yxat. (element1, element2)",
+    "dictionary": "Kalit-qiymat juftligi shaklidagi ma'lumot. {kalit: qiymat}",
+    "for": "Takrorlash operatori. Ro'yxatdagi har bir element uchun kodni bajaradi."
+}
+for kalit, izoh in python_lugat.items():
+    print(f"{kalit} - {izoh}")
+
+#########################################################################################
+# Davlatlar va ularning poytaxtlari lug'ati
+davlatlar = {
+    "o'zbekiston": "toshkent",
+    "aqsh": "vashington",
+    "rossiya": "moskva",
+    "xitoy": "pekin",
+    "hindiston": "nuy-deli",
+    "angliya": "london",
+    "fransiya": "parij",
+    "italiya": "rim",
+    "germaniya": "berlin",
+    "turkiya": "ankara"
+}
+
+# Foydalanuvchidan davlat nomini so'rash
+davlat = input("Iltimos, biror davlat nomini kiriting: ").lower()
+
+# Poytaxtini chiqarish yoki xato xabar
+if davlat in davlatlar:
+    print(f"{davlat.capitalize()}ning poytaxti - {davlatlar[davlat].capitalize()}")
+else:
+    print("Bizda bunday ma'lumot yo'q.")
+#######################################################################################
+15 dars 
+#######################################################################################
+
+menu = {
+    "osh": 35000,
+    "sho'rva": 25000,
+    "manti": 30000,
+    "lag'mon": 28000,
+    "kabob": 40000,
+    "norin": 32000,
+    "qozonkabob": 45000,
+    "somsa": 8000,
+    "choy": 5000,
+    "salat": 10000
+}
+
+buyurtmalar = []
+print("Iltimos, 3 ta ovqat nomini kiriting:")
+
+for i in range(3):
+    taom = input(f"{i+1}-taom: ").lower()
+    buyurtmalar.append(taom)
+
+
+print("\n Buyurtma natijalari:")
+for taom in buyurtmalar:
+    if taom in menu:
+        print(f"{taom.capitalize()} — {menu[taom]} so'm")
+    else:
+        print(f"Bizda {taom} yo'q")
+
