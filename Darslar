@@ -328,3 +328,164 @@ for taom in buyurtmalar:
     else:
         print(f"Bizda {taom} yo'q")
 
+
+
+
+№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№
+16- Dars
+######################################################################################
+
+4 ta mashhur shaxs haqida lug'atlar
+shaxs1 = {
+    'ism': 'Rustem  Einstein',
+    'soha': 'Ilm-fan (fizika)',
+    'mashhur_asar': 'Aldohchilik nazariyasi',
+    'davlat': 'Germaniya'
+}
+
+shaxs2 = {
+    'ism': 'Abdumalik da Vinci',
+    'soha': 'San’at, ilm',
+    'mashhur_asar': 'Gozal Liza',
+    'davlat': 'Italiya'
+}
+
+shaxs3 = {
+    'ism': 'Suxrob Jobs',
+    'soha': 'Internet, texnologiya',
+    'mashhur_asar': 'Depal kompaniyasi asoschisi',
+    'davlat': 'AQSh'
+}
+
+shaxs4 = {
+    'ism': 'Azamat Navoiy',
+    'soha': 'Adabiyot',
+    'mashhur_asar': 'Xamsa',
+    'davlat': 'Xorazm (hozirgi O‘zbekiston)'
+}
+
+# Lug'atlarni ro'yxatga joylash
+shaxslar = [shaxs1, shaxs2, shaxs3, shaxs4]
+
+# Har bir shaxs haqidagi ma'lumotni konsolga chiqarish
+for shaxs in shaxslar:
+    print(f"Ismi: {shaxs['ism']}")
+    print(f"Soha: {shaxs['soha']}")
+    print(f"Mashhur asari/yutug‘i: {shaxs['mashhur_asar']}")
+    print(f"Kelib chiqishi: {shaxs['davlat']}\n")
+######################################################
+2 mashq 
+####################################################
+# Davlatlar haqida lug'at
+davlatlar = {
+    'O‘zbekiston': {
+        'poytaxt': 'Toshkent',
+        'maydon': 448978,
+        'aholi': 36_000_000,
+        'pul birligi': "so'm"
+    },
+    'AQSh': {
+        'poytaxt': 'Vashington',
+        'maydon': 9834000,
+        'aholi': 331_000_000,
+        'pul birligi': 'dollar'
+    },
+    'Germaniya': {
+        'poytaxt': 'Berlin',
+        'maydon': 357386,
+        'aholi': 83_000_000,
+        'pul birligi': 'yEVRO'
+    },
+    'Yaponiya': {
+        'poytaxt': 'Tokio',
+        'maydon': 377975,
+        'aholi': 125_000_000,
+        'pul birligi': 'yen'
+    }
+}
+
+# Har bir davlat haqida ma'lumotni chiqarish
+for davlat, info in davlatlar.items():
+    print(f"\nDavlat: {davlat}")
+    print(f"Poytaxt: {info['poytaxt']}")
+    print(f"Maydoni: {info['maydon']} km²")
+    print(f"Aholisi: {info['aholi']:,} kishi")
+    print(f"Pul birligi: {info['pul birligi']}")
+####################################################################################
+17 mashq
+################################################
+
+kitoblar = []
+
+print("Yaxshi ko‘rgan kitoblaringizni kiriting.")
+print("To‘xtatish uchun 'stop' deb yozing.")
+
+while True:
+    kitob = input("Kitob nomi: ")
+    if kitob.lower() == 'stop':
+        break
+    kitoblar.append(kitob)
+
+# Kirilgan kitoblar ro'yxatini chiqaramiz
+print("\nSiz yaxshi ko‘rgan kitoblar:")
+for nom in kitoblar:
+    print(f"- {nom}")
+
+########################################################
+18 mashq
+
+###################################
+buyurtmalar = []
+
+print("Buyurtma qabul qiluvchi dastur.")
+print("Buyurtma kiritishda 'stop' deb yozsangiz, jarayon to‘xtaydi.\n")
+
+while True:
+    mahsulot = input("Mahsulot nomini kiriting: ")
+    if mahsulot.lower() == 'stop':
+        break
+    buyurtmalar.append(mahsulot)
+
+# Buyurtmalar ro'yxatini chiqaramiz
+print("\nSiz qabul qilgan buyurtmalar:")
+for i, item in enumerate(buyurtmalar, 1):
+    print(f"{i}. {item}")
+#####################################################################
+
+19 mashq
+#####################################
+
+def chiqar_x_y():
+    x = input("x sonini kiriting: ")
+    y = input("y sonini kiriting: ")
+    
+    print(x)
+    print(y)
+    print(x)
+    print(y)
+chiqar_x_y()
+#############################################################################
+
+def solishtir_sonlar():
+    x = float(input("Birinchi sonni kiriting: "))
+    y = float(input("Ikkinchi sonni kiriting: "))
+
+    if x > y:
+        print(f"Kattasi: {x}")
+    elif y > x:
+        print(f"Kattasi: {y}")
+    else:
+        print("Sonlar teng")
+
+
+solishtir_sonlar()
+
+
+################################################################
+20 mashq
+##########################################################
+
+
+
+
+
