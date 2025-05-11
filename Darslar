@@ -484,7 +484,271 @@ solishtir_sonlar()
 ################################################################
 20 mashq
 ##########################################################
+# 20 dars
 
+
+# Foydanaluvchidan ismi, familiyasi, tug'ilgan yili, tug'ilgan joyi,
+# email manzili va telefon raqamini qabul qilib, lug'at ko'rinishida 
+# qaytaruvchi funksiya yozing. Lug'atda foydalanuvchu yoshi ham bo'lsin.
+# Ba'zi argumentlarni kiritishni ixtiyoriy qiling 
+# (masalan, tel.raqam, el.manzil)
+
+# def inson_info (ismi,familiyasi,tugilgan_yili, tugilgan_joyi,email=" ",telefon_raqami=" "):
+#     odam ={'ismi':ismi,
+#            'familyasi':familiyasi,
+#            "tug'ilgan yili":tugilgan_yili,
+#            'tugilgan joyi':tugilgan_joyi,
+#            'email':email,
+#            'telefon raqami':telefon_raqami}
+#     return odam
+# odam1=inson_info('shahzod','ranaldo','1945','London',)
+# odam2=inson_info('sanjar','jumaqulov','1998','germaniya','tursunxon@gmail.com','998971001414')
+# odamlar=[odam1,odam2]
+# print(odamlar)
+
+# Uchta son qabul qilib, ulardan eng kattasini qaytaruvchi funksiya yozing
+
+# def sonlar (x,y,z):
+#     return max(x,y,z)
+# son1=12
+# son2=44
+# son3=100
+# natija=sonlar(son1,son2,son3)
+# print(f"eng katta son {natija} ")
+
+
+#######################################################################################################
+##################################################################################################
+
+ ###################### son_top ###########################
+
+
+
+import random
+
+def sontop(x=10):
+    tasodifiy_son = random.randint(1,x)
+    print(f"Men 1 dan {x} gacha son o'yladim. Topa olasizmi?", end="")
+    taxminlar = 0
+    while True:
+        taxminlar += 1
+        taxmin = int(input(">>>"))
+        if taxmin<tasodifiy_son:
+            print("Xato. Men o'ylagan son bundan kattaroq. Yana harakat qiling:", end="")
+        elif taxmin>tasodifiy_son:
+            print("Xato. Men o'ylagan son bundan kichikroq. Yana harakat qiling:", end="")
+        else:
+            break
+        
+    print(f"Tabriklayman. {taxminlar} ta taxmin bilan topdingiz!")
+    return taxminlar
+    
+
+def sontop_pc(x=10):
+    input(f"1 dan {x} gacha son o'ylang va istalgan tugmani bosing. Men topaman.")
+    quyi = 1
+    yuqori = x
+    taxminlar = 0
+    while True:
+        taxminlar += 1
+        if quyi != yuqori:
+            taxmin = random.randint(quyi,yuqori)
+        else:
+            taxmin = quyi
+        javob = input(f"Siz {taxmin} sonini o'yladingiz: to'g'ri (t),"
+                      f"men o'ylagan son bundan kattaroq (+), yoki kichikroq (-)".lower())
+        if javob == "-":
+            yuqori = taxmin - 1
+        elif javob == "+":
+            quyi = taxmin + 1
+        else:
+            break
+    print(f"Men {taxminlar} ta taxmin bilan topdim!")
+    return taxminlar
+
+def play(x=10):
+    yana = True
+    while yana:
+        taxminlar_user = sontop(x)
+        taxminlar_pc = sontop_pc(x)
+        
+        if taxminlar_user>taxminlar_pc:
+            print(f"Men {taxminlar_pc} taxmin bilan topdim va  yutdim!")
+        elif taxminlar_user<taxminlar_pc:
+            print(f"Siz {taxminlar_user} taxmin bilan topdingiz va yutdingiz!")
+        else:
+            print("Durrang!")
+        yana = int(input("Yana o'ynaymizmi? Ha(1)/Yo'q(0):"))
+            
+play()
+
+
+
+############################################################################################
+
+
+
+# import random
+
+# def soz_top_oyini():
+#     # So'zlar ro'yxati
+#     sozlar = ["python", "dasturlash", "kompyuter", "o'yin", "kitob", "robot"]
+#     tanlangan_soz = random.choice(sozlar)
+#     uzunlik = len(tanlangan_soz)
+#     taxmin_qilingan = ["_"] * uzunlik
+#     urinishlar = 0
+#     topilgan_harflar = []
+
+#     print("Men bir so'z o'yladim. Uni topishga harakat qiling!")
+#     print(" ".join(taxmin_qilingan))
+
+#     while "_" in taxmin_qilingan:
+#         harf = input("Harf kiriting: ").lower()
+
+#         if len(harf) != 1 or not harf.isalpha():
+#             print("Iltimos, faqat bitta harf kiriting!")
+#             continue
+
+#         urinishlar += 1
+
+#         if harf in topilgan_harflar:
+#             print(f"'{harf}' harfini allaqachon topgansiz!")
+#             continue
+
+#         topilgan_harflar.append(harf)
+
+#         if harf in tanlangan_soz:
+#             print(f"Ha, '{harf}' harfi bor!")
+#             for index, char in enumerate(tanlangan_soz):
+#                 if char == harf:
+#                     taxmin_qilingan[index] = harf
+#         else:
+#             print(f"Yo'q, '{harf}' harfi yo'q!")
+
+#         print(" ".join(taxmin_qilingan))
+
+#     print(f"Tabriklayman! So'zni {urinishlar} urinishda topdingiz!")
+#     print(f"So'z: {tanlangan_soz}")
+
+# # O'yinni boshlash
+# soz_top_oyini()
+###########################################################################################################3
+
+
+
+
+
+
+class User:
+    """Foydalanuvchi klassi"""
+    
+    def __init__(self, ism, familiya, username, email, telefon=None, tugilgan_sana=None):
+        self.ism = ism
+        self.familiya = familiya
+        self.username = username
+        self.email = email
+        self.telefon = telefon
+        self.tugilgan_sana = tugilgan_sana
+
+    def get_full_name(self):
+        """Foydalanuvchining to'liq ismini qaytarish"""
+        return f"{self.ism} {self.familiya}"
+    
+    def get_info(self):
+        """Foydalanuvchi haqidagi barcha ma'lumotlarni chiqarish"""
+        info = f"Ism: {self.ism}\n"
+        info += f"Familiya: {self.familiya}\n"
+        info += f"Username: {self.username}\n"
+        info += f"Email: {self.email}\n"
+        if self.telefon:
+            info += f"Telefon: {self.telefon}\n"
+        if self.tugilgan_sana:
+            info += f"Tug'ilgan sana: {self.tugilgan_sana}\n"
+        return info
+    
+    def change_username(self, new_username):
+        """Foydalanuvchi nomini o'zgartirish"""
+        old_username = self.username
+        self.username = new_username
+        print(f"Username '{old_username}' o'zgartirildi. Yangi username: '{self.username}'")
+
+# Misol:
+user1 = User(
+    ism="Ali",
+    familiya="Valiyev",
+    username="ali_valiyev",
+    email="ali.valiyev@example.com",
+    telefon="+998901234567",
+    tugilgan_sana="2000-04-12"
+)
+
+# Foydalanuvchining to'liq ismi
+print(user1.get_full_name())
+
+# Foydalanuvchi haqidagi barcha ma'lumotlarni chiqarish
+print(user1.get_info())
+
+# Username ni o'zgartirish
+user1.change_username("ali_super")
+
+# O'zgartirilgan ma'lumotlarni ko'rish
+print(user1.get_info())
+
+
+
+
+class Avto:
+    """Avtomobil klassi"""
+    
+    def __init__(self, model, rang, yil, narx, korobka="mexanika", kilometr=0):
+        self.model = model
+        self.rang = rang
+        self.korobka = korobka
+        self.yil = yil
+        self.narx = narx
+        self.kilometr = kilometr
+
+    def get_info(self):
+        """Avtomobil haqidagi barcha ma'lumotlarni chiqarish"""
+        info = f"Model: {self.model}\n"
+        info += f"Rang: {self.rang}\n"
+        info += f"Yil: {self.yil}\n"
+        info += f"Korobka: {self.korobka}\n"
+        info += f"Narx: {self.narx} $\n"
+        info += f"Kilometr: {self.kilometr} km\n"
+        return info
+    
+    def update_kilometr(self, new_km):
+        """Kilometrni yangilash"""
+        if new_km >= self.kilometr:
+            self.kilometr = new_km
+            print(f"Kilometr yangilandi: {self.kilometr} km")
+        else:
+            print("Xatolik! Yangi kilometr avvalgidan kichik bo'lishi mumkin emas!")
+    
+    def add_kilometr(self, km):
+        """Kilometrga qo'shish"""
+        if km > 0:
+            self.kilometr += km
+            print(f"{km} km qo'shildi. Jami kilometr: {self.kilometr} km")
+        else:
+            print("Xatolik! Kilometr manfiy bo'lishi mumkin emas!")
+
+# Avtomobil yaratish
+avto1 = Avto("Tesla Model S", "Oq", 2022, 75000)
+avto2 = Avto("BMW X5", "Qora", 2020, 65000, korobka="avto", kilometr=15000)
+
+# Avtomobil haqida ma'lumot
+print(avto1.get_info())
+print(avto2.get_info())
+
+# Kilometrni yangilash
+avto1.update_kilometr(2000)
+avto2.add_kilometr(500)
+
+# Yangilangan ma'lumotlar
+print(avto1.get_info())
+print(avto2.get_info())
 
 
 
